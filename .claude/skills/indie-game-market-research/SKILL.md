@@ -1,14 +1,15 @@
-﻿---
+---
 name: indie-game-market-research
 description: >
   Usage: (no args) = Market Overview — ranks all tracked genres by viability, hit rate, trend, revenue range.
   Usage: [genre] = Genre Deep Dive — researches 21 real games with full descriptive data.
-  Examples: /indie-game-market-research  |  /indie-game-market-research [roguelike deckbuilder]
+  Usage: add [genre] = Add New Genre — researches a genre and adds it to the viability ratings table.
+  Examples: /indie-game-market-research  |  /indie-game-market-research [roguelike deckbuilder]  |  /indie-game-market-research add [roguelike kingdom builder]
 ---
 
 # Indie Game Market Research
 
-Two modes depending on whether you provide a genre argument.
+Three modes depending on how you invoke the skill.
 
 ## Core Philosophy
 
@@ -38,8 +39,9 @@ no confirmations. Apply these rules throughout every step:
 ## Arguments
 
 ```
-/indie-game-market-research            # Mode 1: Market Overview (all genres)
-/indie-game-market-research [genre]    # Mode 2: Genre Deep Dive
+/indie-game-market-research                  # Mode 1: Market Overview (all genres)
+/indie-game-market-research [genre]          # Mode 2: Genre Deep Dive
+/indie-game-market-research add [genre]      # Mode 3: Add new genre to ratings table
 ```
 
 ---
@@ -193,6 +195,101 @@ After all 21 games are collected, produce this summary:
 ---
 **Full data**: gameplay-review-[genre-slug].xlsx
 **Sheet tab**: 🏆 [genre-slug] (Google Sheets)
+```
+
+---
+
+## Mode 3 — Add New Genre (add [genre])
+
+**Goal**: Research a genre that isn't yet tracked and add it to the Google Sheets viability
+ratings table, then export the updated CSV and commit.
+
+### Step 1 — Parse genre name and check for duplicates
+
+Extract the genre name from everything after `add` in the argument.
+Read the full ratings sheet using the same Python snippet as Mode 1 Step 1.
+
+If a row already exists whose genre name matches (case-insensitive), stop immediately and print:
+*"[Genre] is already tracked. Use /genre-viability-data to update it."*
+
+Do not ask for confirmation. If it's new, proceed.
+
+### Step 2 — Research the genre
+
+Run 3 web searches to gather viability signals:
+```
+web_search: site:howtomarketagame.com [genre] 2025 2026
+web_search: [genre] steam indie revenue hit rate 2025 2026
+web_search: games-stats.com steam [genre] tag indie revenue
+```
+
+From results, determine:
+- **Hit Rate** — % of released games reaching 1,000+ reviews (≈ $150K revenue threshold)
+- **Trend** — Growing / Stable / Declining / Saturated
+- **Solo Target** — realistic solo dev revenue range (e.g. `$80K–$300K`)
+- **Team of 4 Target** — realistic small-team revenue range (e.g. `$300K–$1.5M`)
+- **Notes** — 1–2 sentences: recent hit examples, key risks, saturation signals
+
+If search results are thin, note the data gap inline and use conservative estimates.
+
+### Step 3 — Assign Verdict
+
+Apply these thresholds (consistent with genre-viability-data/SKILL.md):
+- **GO**: hit rate ≥ 2% AND trend not Declining AND solo target ≥ $100K
+- **CAUTION**: hit rate 0.5–2% OR Declining trend OR limited solo headroom
+- **AVOID**: hit rate < 0.5% OR Saturated OR 0 hits in the last 2 quarters
+
+### Step 4 — Write to Google Sheets
+
+Append the new row using Python. Column order must match the existing sheet exactly:
+`["Verdict", "Genre", "Solo Target", "Team of 4", "Hit Rate", "Trend", "Notes"]`
+
+```python
+import gspread
+from google.oauth2.service_account import Credentials
+
+CREDENTIALS_FILE = r"C:\Organized Files\My Game Asset\Game-Research\genre-viability-data-417b9f28c38e.json"
+SHEET_URL = "https://docs.google.com/spreadsheets/d/1xAF6wWvhe0E4kBQV0i_DqTu1hvqdy8HL07YZyTtruCw/edit?usp=sharing"
+SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
+
+creds  = Credentials.from_service_account_file(CREDENTIALS_FILE, scopes=SCOPES)
+client = gspread.Client(auth=creds)
+ws     = client.open_by_url(SHEET_URL).worksheet("Genre Viability Ratings (GO / CAUTION / AVOID)")
+
+ws.append_row([verdict, genre, solo_target, team4_target, hit_rate, trend, notes])
+```
+
+Use **`C:\Users\ad\AppData\Local\Programs\Python\Python312\python.exe`** to run all Python.
+
+### Step 5 — Export CSV + Git commit
+
+After the sheet write succeeds, export the full sheet to CSV:
+
+```python
+import csv
+from pathlib import Path
+
+csv_path = Path(r"C:\Organized Files\My Game Asset\Game-Research\data\genre-viability.csv")
+with open(csv_path, "w", newline="", encoding="utf-8") as f:
+    csv.writer(f).writerows(ws.get_all_values())
+```
+
+Then commit and push:
+```
+git add data/genre-viability.csv
+git commit -m "add: [genre] to viability ratings - [YYYY-MM-DD]"
+git push
+```
+
+### Output format
+
+```
+## Added: [Genre]
+**Verdict**: GO / CAUTION / AVOID  |  **Hit Rate**: X%  |  **Trend**: [trend]
+**Solo Target**: $X–$Y  |  **Team of 4**: $A–$B
+**Notes**: [notes]
+
+✓ Sheet updated · CSV exported · Committed & pushed
 ```
 
 ---

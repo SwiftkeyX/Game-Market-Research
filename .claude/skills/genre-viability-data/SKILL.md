@@ -1,9 +1,19 @@
-﻿---
+---
 name: genre-viability-data
-description: >
-  Usage: (no arg) view ratings | [update] refresh from live data | [add][genre] add new genre |
-  [remove][genre] delete a genre. Data lives in Google Sheets (browser-viewable). Warns when data
-  is older than 1 month. History versioned as tabs in the same sheet.
+description: "INTERNAL — Do not invoke directly."
+---
+
+## ⚠️ INTERNAL SKILL
+
+This skill is invoked automatically by `/indie-game-market-research`.
+If the **user** typed `/genre-viability-data` directly, respond with this message and stop:
+
+> "genre-viability-data is an internal sub-skill. To view or manage genre ratings, run:
+> `/indie-game-market-research` (market overview) or
+> `/indie-game-market-research add [genre]` (add a new genre)."
+
+Do not execute any further steps in this skill when invoked directly by the user.
+
 ---
 
 # Steam Genre Viability Reference

@@ -1,11 +1,19 @@
-﻿---
+---
 name: competitor-lookup
-description: >
-  Usage: [genre] — Research 21 real games (7 HIGH / 7 MID / 7 FAILURE) for a genre.
-  Collects full descriptive data: revenue, reviews, team size, art style, game feel,
-  features, scope, content depth, and replayability.
-  Saves to a genre-specific Google Sheets tab and an Excel file.
-  Example: [roguelike deckbuilder]
+description: "INTERNAL — Do not invoke directly."
+---
+
+## ⚠️ INTERNAL SKILL
+
+This skill is invoked automatically by `/indie-game-market-research [genre]`.
+If the **user** typed `/competitor-lookup` directly, respond with this message and stop:
+
+> "competitor-lookup is an internal sub-skill. To research a genre, run:
+> `/indie-game-market-research [genre name]`
+> It runs competitor-lookup automatically as part of the full workflow."
+
+Do not execute any further steps in this skill when invoked directly by the user.
+
 ---
 
 # Competitor Lookup

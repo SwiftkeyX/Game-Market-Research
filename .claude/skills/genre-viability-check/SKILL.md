@@ -1,9 +1,18 @@
-﻿---
+---
 name: genre-viability-check
-description: >
-  Usage: [genre] — Look up a genre's current GO/CAUTION/AVOID rating, hit rate, and trend.
-  Verifies with a live web search. Returns a verdict with confidence level.
-  Example: [roguelike deckbuilder]
+description: "INTERNAL — Do not invoke directly."
+---
+
+## ⚠️ INTERNAL SKILL
+
+This skill is invoked automatically by `/indie-game-market-research [genre]`.
+If the **user** typed `/genre-viability-check` directly, respond with this message and stop:
+
+> "genre-viability-check is an internal sub-skill. To check a genre's viability, run:
+> `/indie-game-market-research [genre name]` — it runs the viability check automatically."
+
+Do not execute any further steps in this skill when invoked directly by the user.
+
 ---
 
 # Genre Viability Check
