@@ -1,0 +1,90 @@
+Genre,Game,Year,Revenue,Review,Team size,Trailer,UI,Art style,Feature,Scope,Content,Replayability
+2D Platformer,Pizza Tower,2023,~$72M+ est.,"71,408",Solo (Tour De Pizza / McPig),Multiple viral trailers showing frantic Wario Land-speed runs; meme-generating clips drove massive pre-launch buzz; shows momentum system in first 5s,Minimal HUD - speed meter and Peppino state visible; no clutter; arcade score display clean and readable,"High-res pixel art, 1990s Nicktoon-inspired, vibrant chaotic palette, exaggerated rubber-hose animations","- Momentum-based speed platforming (walk to sprint to chaos)
+- 5 floors x multiple levels; secret bonus rooms in every level
+- Score rank system (D to P); taunts + parries
+- 3 campaigns; 2 playable characters; 15+ boss fights",5-6hr first playthrough; 15+ levels; P-rank chase adds 50-100+ hrs; launched full Jan 2023,5 floors with unique biomes; cheese dragons; secret bonus dungeons per level. 'More content than games 3x the price' - Steam,Extremely high - P-rank pursuit drives hundreds of hours; daily challenge community; active mod scene. '400+ hrs chasing P ranks' - Reddit
+2D Platformer,SANABI,2023,~$20-30M est.,"43,920",Team of 5 (WonderPotion) + NEOWIZ pub.,Shows grappling hook mechanic clearly with stylish cyberpunk action; music-driven pacing; introduces story stakes early,Clean minimal cyberpunk HUD; health and energy bars readable at glance; boss health bars stylized but clear,Pixel art cyberpunk dystopia; neon-lit dark city aesthetic; cel-shaded sprites; vivid neon accents on dark palette,"- Prosthetic grappling arm as sole traversal tool (swing, boost, slam)
+- Combined traversal + weapon in one mechanic
+- Story-driven found-family narrative
+- Diverse boss fights integrating hook
+- Multiple districts with unique visual identity","8-10hr campaign; multiple chapters; NG+ and boss rush; EA June 2022, full Nov 2023",Multiple city districts; varied enemy types; memorable boss designs; cinematic story. 'Cried at the ending' - Steam,Moderate-high; NG+ mode; speedrun community; 'Replayed twice for story details I missed' - Reddit
+2D Platformer,Neon White,2022,$8.8M (reported),"19,085",Team of ~6 (Angel Matrix) + Annapurna pub.,Fast-cut speedrun showcase with anime aesthetic; card-discarding mechanic shown clearly in first 15s; viral among speedrun and anime communities,"Extremely clean - medal timer, card slots, demon count; highly readable at speed; leaderboard ghost visible",Anime 2D character portraits + vibrant neon 3D environments; cel-shaded; bold color-coded card system,"- Card-based abilities: discard cards for special moves (dash, double-jump, rocket)
+- Speedrun-focused 100+ level design
+- Leaderboards + medal grades (Bronze-Ace) baked in
+- Gift/relationship system unlocks story scenes
+- 5 chapters + post-game challenge missions",6-10hr main story; 100+ levels; post-game challenge levels; significant speedrunning depth,100+ levels; gift items unlock story scenes; challenge levels add 4-6hr post-game. 'Perfect just-one-more-attempt loop' - Steam,Very high; friend leaderboard competition; gold/Ace runs add 50+ hrs. 'Replayed every level 200+ times chasing Ace' - speedrun community
+2D Platformer,Anomaly Agent,2024,~$10M est.,"8,973",Team of ~5 (Phew Phew Games) + GameDev.ist,High-energy showcase of cyberpunk beat-em-up combat; stylish anime action cuts; communicates tone immediately,Clean manga-panel HUD; health/energy minimal but visible; comic book presentation consistent with design,Pixel art cyberpunk manga; B&W manga cutscenes; vibrant neon action palette; punchy particle effects,"- Beat-em-up platformer hybrid; agency operative setting
+- Multiple weapons with unique feel
+- Time-stop anomaly mechanic for crowd control
+- Parry system with skill expression
+- Multiple mission levels with varied objectives
+- 3 difficulty modes",6-8hr campaign; multiple mission levels; 3 difficulties; PS Vita-era action pacing,Multiple agency missions; diverse enemy factions and bosses; operative narrative. 'Best action platformer in years' - Steam,Moderate-high; challenge modes; S-rank chase; 'Goes so fast you replay for pure feel' - Reddit
+2D Platformer,Lil Gator Game,2022,~$5.9M est.,"3,929",Team of 3 (MegaWobble) + Playtonic Friends pub.,Adorable wholesome tone; cozy exploration emphasized; slow-paced warmth over action; appeals to cozy audience clearly,Clean minimal; companion tracking and quest markers subtle; designed for cozy not stressful experience,Colorful low-poly 3D; bright cheerful palette; cel-shaded chibi characters; toybox aesthetic with cardboard props,"- Cozy 3D collectathon platformer; no combat
+- Cardboard shield crafting mechanic
+- NPC friendship quests drive progression
+- Sibling relationship narrative
+- Open world exploration with collectibles
+- DLC 'In the Dark' (2025)",4-6hr main experience; dense NPC and collectible world; DLC adds 2-3hr,Multiple themed island areas; 50+ NPCs with dialogue; heartwarming sibling story. 'Made me cry before credits' - Steam,"Low-moderate; exploration replay; DLC content; 'Perfect weekend game, played twice' - Reddit"
+2D Platformer,Gravity Circuit,2023,~$3.8M est.,"3,381",Solo (Antti / Domesticated Ant Games) + PID Games pub.,Clean showcase of Mega Man-inspired stage progression and robot combat; communicates genre clearly to target audience,"Classic retro HUD - health bar, lives, weapon/energy; faithful to Mega Man inspiration; clean and functional",Detailed 2D pixel art; vibrant robot designs; Mega Man Zero/ZX aesthetic; clean readable enemy designs,"- Mega Man-inspired nonlinear stage progression
+- Gundam-inspired robot visual design
+- Fighting-game style combo system
+- Robot companion assists; upgradeable abilities
+- 8 main stages + post-game challenges
+- Boss rush mode",8-12hr campaign; 8+ robot masters; upgradeable abilities; score attack; ~10 years solo development,8 themed stages; diverse upgrades from bosses; arena challenge mode. 'Best Mega Man since the originals' - Metacritic users,High; S-rank chase; boss rush; 'I speedrun this now' - Reddit
+2D Platformer,ANTONBLAST,2024,~$4.3M est. (recouped <1 month post-launch),"2,835",Team of ~8-10 (Summitsphere) + Joystick Ventures pub.,Explosive high-energy; Wario Land-style destruction shown clearly; viral social media pre-launch; chaotic energy communicated immediately,Bold arcade-style HUD; Blast Meter visible; collectible tracking minimal; clean for high-speed play,Vibrant 2D pixel art; 1990s Nickelodeon cartoon energy; explosive particle effects; bold saturated palette,"- Wario Land-inspired environment destruction mechanics
+- Unique Blast Meter system
+- 12 side-scrolling levels across varied worlds
+- Boss rush + Lime Trials time challenge mode
+- Hard mode; Stage Rush speedrun mode
+- 2 playable characters (Anton, Annie)",6-8hr campaign; 12 levels; boss rush; EA phase ~6 months; full Dec 2024 with bonus modes,12 levels from Boiler City to Hell; 4 post-launch bosses; diverse destruction physics. 'A love letter to Wario Land' - Metacritic,High; speedrun-friendly; Lime Trials replay; 'I play this on lunch breaks still' - Reddit
+2D Platformer,Frogun,2022,~$570K est.,507,Solo (Marco Venturini / Mokaloca),Charming retro aesthetic; shows grapple-frog mechanic clearly; PS1-era nostalgia evident in visual and sound,Minimal retro-styled HUD; life/grapple-ammo counter visible; PS1-era presentation,Low-poly 3D N64/PS1 era; chunky character models; warm color palette; retro cartridge aesthetic,"- 'Frogun' grappling hook as primary traversal
+- 3D platformer with collecting mechanics
+- Multiple themed worlds
+- Boss fights integrating grapple
+- DLC 'Frogun Encore' (2023) adds content",4-6hr main campaign; multiple worlds; Encore DLC adds 3-4hr; solid solo dev post-launch support,Multiple themed retro worlds; boss encounters; collectibles. 'Perfectly captures PS1 charm' - Steam,Moderate; time trials; DLC adds replay; 'Short but delightful' - Steam
+2D Platformer,BioGun,2024,~$130K (reported estimate),477,"Duo (Dapper Dog Digital, Dallas TX)",Colorful inside-body sci-fi aesthetic; Metroidvania loops shown; biome exploration emphasized; niche but clear pitch,Standard Metroidvania HUD; map + health + weapon; somewhat busy but functional,Vibrant 2D sci-fi cartoon; inside-human-body aesthetic; colorful cell/bacteria enemy designs,"- Metroidvania + platformer hybrid; vaccine-themed combat
+- Twin-stick shooter elements
+- Unlockable abilities gate exploration
+- Interconnected body biomes
+- Full map; multiple upgrade paths",10-15hr Metroidvania; multiple biomes; EA for ~2 years before 2024 full launch,"Multiple body biomes (lungs, heart, brain); diverse enemy types; boss fights; upgrade tree. 'Underrated gem' - Reddit","Moderate; New Game+ option; 'Great first run, unlikely to replay' - Steam"
+2D Platformer,Desvelado,2024,~$189K est.,360,Small indie team (Latin America),Cute spooky atmosphere; light-extinguishing mechanic shown charmingly; gentle haunted lullaby music sets tone immediately,Minimal and clean; light indicators; nothing distracts from platforming focus,Hand-drawn 2D dark pastel; sleepy dreamy aesthetic; cute chibi vampire design; soft shadow palette,"- Precision platformer: extinguish every light in haunted castle
+- Flame-based limited dash (one per flame collected)
+- Ghost enemies re-light lamps (unique tension loop)
+- Wall-jump and standard platforming vocabulary
+- No violence - pure puzzle-platforming",2-3hr; focused precision platformer; polished single-playthrough; $6.99 price point,Castle environments with varied puzzle rooms; ghost patrol enemies; light-based challenge variety. 'Perfect Halloween game' - Steam,"Low; experience-focused; 'Finished in one sitting, worth it' - Steam"
+2D Platformer,Zefyr: A Thief's Melody,2025,~$252K est.,337,"Solo (Mathias Fontmarty, 11 years dev)",Beautiful cel-shaded world; Zelda BOTW aesthetic immediately apparent; gentle ocean music; freedom and exploration communicated clearly,Clean minimal; freedom-focused; no combat HUD clutter; traversal feels unobstructed,Cel-shaded 3D; soft watercolor-inspired palette; vibrant floating islands; Zelda BOTW aesthetic with anime cel-shading,"- Free-climbing on almost any surface
+- Open 3D island environments
+- Optional stealth sections
+- Environmental puzzles and collectible quests
+- No fall damage; no health bar; combat optional",6-10hr; multiple themed islands; 11-year solo development; June 2025 launch,Multiple floating island environments; stealth and puzzle blend; contemplative wordless narrative. 'Solo dev masterwork' - Steam,Low-moderate; exploration replay; 'I just want to exist in this world' - Steam
+2D Platformer,Symphonia,2024,~$221K est.,295,Team of ~4 (Sunny Peak) + Headup pub.,Beautiful musical atmosphere; violinist launch mechanic shown elegantly; orchestral score evocative; visually distinct from other platformers,Clean minimal floating HUD; momentum cues subtle; nothing distracts from aesthetic experience,Hand-drawn/painterly 2D; muted baroque palette; ornate concert hall and cathedral environments; Baroque visual identity,"- Momentum-based platforming: violin launches Philemon through levels
+- Precision platformer with accessibility options (double jump, slow-mo)
+- 4 distinct themed locations
+- Upgradeable movement abilities
+- Wordless musical narrative
+- Orchestral score integrated into level design",3-4hr; 4 themed locations; $9.99 price; difficulty can extend to 7hr+,4 baroque/orchestral environments; boss encounters; atmospheric wordless narrative. 'Short but unforgettable' - DualShockers,Low; experience-focused; 'Perfect first playthrough' - Metacritic
+2D Platformer,Windswept,2025,~$215K est. (barely broke even per dev),287,Solo (PeekingBoo / WeatherFell),Colorful retro showcase; two-character buddy gameplay shown; nostalgic SNES energy; heartwarming tone,Clean 2-character HUD; lives and health readable; minimal but functional for retro design,Pixel art SNES-era; bright primary colors; DKC/Kirby/Mario World visual touchstones; cheerful cartoon style,"- 2-character buddy platformer (duck + tortoise with different abilities)
+- 40+ stages across themed worlds
+- Secrets and collectibles in every stage
+- Local co-op split-screen support
+- Retro challenge-first level design",8-12hr; 40+ stages; co-op mode adds replay; secrets dense per level,40+ stages with themed worlds; hidden collectibles; bonus challenges. 'Best retro platformer 2025' - critics; dev barely broke even despite 97% positive,Moderate; co-op replay value strong; time trials; 'More fun with a friend' - Steam
+2D Platformer,Curse of the Sea Rats,2023,~$153K est.,102,"Team of ~8 (Petoons Studio, Spain)",Hand-drawn art shown prominently; adventurous pirate tone; Metroidvania gameplay highlighted; beautiful but hook unclear,Standard Metroidvania HUD; map + health + weapon; somewhat cluttered; pacing issues noted by reviewers,Hand-painted 2D; vibrant rat pirate aesthetic; detailed character animations; colorful ocean and dungeon setting,"- Metroidvania platformer with 4 unique rat characters
+- Hand-drawn frame-by-frame animation
+- NPC side quests
+- Multiple biomes with different mechanics
+- Full interconnected map exploration",10-12hr Metroidvania; 4 characters; multiple biomes; boss fights; full map,Multiple pirate biomes; 4 rat protagonists; boss fights; NPC storylines. 'Beautiful art sadly paired with mediocre gameplay' - Metacritic,Low; gameplay issues limit replay; 55% positive reflects quality vs. investment gap
+2D Platformer,Obsolete,2022,<$10K est.,~30,"Solo (leFarfelu, first-time dev)",Minimal or absent; near-zero marketing presence; no social media footprint,Monochrome minimal; blob transformation indicator only; no keybinding support (friction noted),Monochrome minimalist pixel art; black-white only palette; isolation atmosphere as visual intent,"- Simple movement/jump/blob transformation mechanic
+- Environmental storytelling through minimalism
+- No combat; exploration only
+- Very limited mechanical vocabulary",1-2hr; very small scale; first-time developer project,Short single-environment experience; atmospheric OST cited as main strength. 'Evokes isolation well but thin on gameplay' - Steam,None; no incentive to replay; experience exhausted on first playthrough
+2D Platformer,Bushiden,2022,<$50K est.,~50,Team of 3 (Pixel Arc Studios),Impressive cyberpunk pixel art in Kickstarter trailers (2018); EA launch buzz failed to convert; incomplete state at launch undermined initial interest,Unpolished EA state; reviews note incomplete UI/UX,2D pixel art cyberpunk ninja; dark neon palette; Ninja Gaiden/Strider 16-bit inspiration; visually distinctive but EA rough,"- Ninja action platformer with cybernetic upgrade system
+- Kickstarter 2018 with ambitious scope
+- EA launch without sufficient content to retain players
+- Metroidvania exploration elements in design",EA with partial content ~3-4hr; development stretched from 2018 Kickstarter through 2022+ without full release,Incomplete biomes; cyberpunk city setting promising but undelivered. 'Great potential stuck in EA limbo' - Steam reviews,None; EA state and low content discourage return; no active community
+2D Platformer,Leap Year,2024,<$15K est.,~20,Solo (unknown),Minimal; concept-driven pitch (collect Feb 2024 calendar pages) without marketing execution,Unknown; game has near-zero press coverage,Pixel art; calendar/time-travel theme; minimal visual identity beyond concept,"- 2D platformer collecting calendar pages (Feb 2024 theme)
+- Concept-first design without mechanical depth
+- Very limited scope",1-2hr estimated; niche concept without broad appeal,Calendar-themed levels; platformer elements; thematic novelty without content depth,None; concept exhausted in first playthrough; no community formed
+2D Platformer,Generic Pixel Platformer (archetype),2023,<$5K est.,~10,Solo (first-time dev),"No distinguishing mechanic in capsule or trailer; looks like one of ~1,960 annual releases; zero social media traction",Standard 2D platformer HUD; nothing distinguishing the experience,Generic pixel art; default Unity/GMS2 asset-adjacent look; no distinctive visual identity,"- Standard jump, run, collect loop
+- No distinguishing mechanic or hook
+- Generic enemy and level design
+- Represents 99%+ of ~1,960 annual 2D platformer releases",2-4hr; no post-launch support; developer moved on after poor launch,Generic levels with no memorable moments; no story investment; invisible on Steam from launch day,Zero; no wishlist momentum; no community; Steam algorithm never surfaces it
