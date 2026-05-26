@@ -1,0 +1,33 @@
+---
+name: gameplay-review
+description: >
+  DEPRECATED — This skill's functionality has been merged into /competitor-lookup.
+  Run /competitor-lookup [genre] instead. It now collects both factual data and
+  descriptive gameplay intelligence (Game Feel, Features, Scope, Content, Replayability)
+  in a single pass.
+---
+
+# Gameplay Review — Deprecated
+
+This skill has been merged into `/competitor-lookup`.
+
+**What changed**: The old approach scored games numerically across 8 dimensions (Art = 7/10, etc.).
+The new approach collects descriptive intelligence — what the game actually is, how it feels,
+what it offers — so you can understand the market rather than benchmark against it.
+
+## Use instead
+
+```
+/competitor-lookup [genre]
+```
+
+This now collects all data in one step:
+- Factual: Year, Revenue, Reviews, Team Size, Art Style
+- Descriptive: Game Feel, Features, Scope, Content, Replayability
+
+Saves to both an Excel file (`gameplay-review-[genre].xlsx`) and a genre-specific Google Sheets tab.
+
+## Legacy data
+
+Existing rows in the `📊 Quality Scores` tab (numeric scores) are still in the sheet.
+New research goes to genre-specific tabs (`🏆 [genre-slug]`) with the updated schema.

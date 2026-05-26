@@ -1,0 +1,12 @@
+# Credentials (never commit)
+genre-viability-data-*.json
+
+# Binary exports (regenerable, not diffable)
+gameplay-review-*.xlsx
+snapshots/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
