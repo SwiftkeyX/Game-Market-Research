@@ -1,4 +1,4 @@
----
+﻿---
 name: competitor-lookup
 description: >
   Usage: [genre] — Research 21 real games (7 HIGH / 7 MID / 7 FAILURE) for a genre.
@@ -263,7 +263,7 @@ from datetime import date
 import time
 
 CREDENTIALS_FILE = r"C:\Organized Files\My Game Asset\Game-Research\genre-viability-data-417b9f28c38e.json"
-SHEET_URL = "https://docs.google.com/spreadsheets/d/1p7vPIIR8imPAZUZekbIuDW7Qfg0Jfc9xa6eEeaSv5Us/edit?usp=sharing"
+SHEET_URL = "https://docs.google.com/spreadsheets/d/1xAF6wWvhe0E4kBQV0i_DqTu1hvqdy8HL07YZyTtruCw/edit?usp=sharing"
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
 HEADERS = [
@@ -287,6 +287,8 @@ genre_slug = genre.lower().replace(" ", "-").replace("/", "-")
 genre_display = " ".join(w.capitalize() for w in genre.split())
 tab_name = f"🏆 {genre_display}"
 
+MAX_ARCHIVES = 3
+
 # Archive existing tab before overwriting (avoids appending duplicates)
 try:
     old_ws = sh.worksheet(tab_name)
@@ -298,6 +300,14 @@ try:
         sh.del_worksheet(old_ws)
 except gspread.WorksheetNotFound:
     pass
+
+# Delete oldest archives beyond the rolling limit
+archive_prefix = f"🗂 {genre_display}"
+all_tabs = sh.worksheets()
+archives = [ws for ws in all_tabs if ws.title.startswith(archive_prefix)]
+archives.sort(key=lambda ws: ws.title)  # YYYY-MM-DD suffix sorts oldest first
+while len(archives) > MAX_ARCHIVES:
+    sh.del_worksheet(archives.pop(0))
 
 ws = sh.add_worksheet(title=tab_name, rows=500, cols=len(HEADERS) + 2)
 ws.append_row(HEADERS)
@@ -461,5 +471,5 @@ Display a grouped summary in chat after writing:
 **Solo dev benchmark**: [Game] — [revenue], [reviews] reviews
 **Excel file**: gameplay-review-[genre].xlsx
 **Snapshot**: snapshots/[genre-slug]/YYYY-MM-DD.xlsx
-**Sheet tab**: 🏆 [Genre Name] (title case)  _(previous run archived as 🗂 [Genre Name] (YYYY-MM-DD))_
+**Sheet tab**: 🏆 [Genre Name] (title case)  _(previous run archived as 🗂 [Genre Name] (YYYY-MM-DD); only 3 most-recent archives kept per genre)_
 ```

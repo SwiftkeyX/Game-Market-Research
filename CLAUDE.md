@@ -1,4 +1,4 @@
-# CLAUDE.md
+﻿# CLAUDE.md
 
 This file provides guidance to Claude when working with files in this repository.
 
@@ -44,7 +44,7 @@ Saves everything to a genre-specific Google Sheets tab and an Excel file.
 ## Google Sheets
 
 All data writes to:
-https://docs.google.com/spreadsheets/d/1p7vPIIR8imPAZUZekbIuDW7Qfg0Jfc9xa6eEeaSv5Us/edit
+https://docs.google.com/spreadsheets/d/1xAF6wWvhe0E4kBQV0i_DqTu1hvqdy8HL07YZyTtruCw/edit
 
 Credentials: `genre-viability-data-417b9f28c38e.json` (in this directory)
 

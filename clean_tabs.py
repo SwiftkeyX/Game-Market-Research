@@ -1,4 +1,4 @@
-"""
+﻿"""
 Lists all tabs in the Google Sheet, then lets you choose which to delete.
 Usage: python clean_tabs.py
 """
@@ -6,7 +6,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 
 CREDENTIALS_FILE = r"C:\Organized Files\My Game Asset\Game-Research\genre-viability-data-417b9f28c38e.json"
-SHEET_URL = "https://docs.google.com/spreadsheets/d/1p7vPIIR8imPAZUZekbIuDW7Qfg0Jfc9xa6eEeaSv5Us/edit?usp=sharing"
+SHEET_URL = "https://docs.google.com/spreadsheets/d/1xAF6wWvhe0E4kBQV0i_DqTu1hvqdy8HL07YZyTtruCw/edit?usp=sharing"
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
 creds  = Credentials.from_service_account_file(CREDENTIALS_FILE, scopes=SCOPES)

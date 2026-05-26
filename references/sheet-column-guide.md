@@ -1,9 +1,9 @@
-# Google Sheet — Column Guide
+﻿# Google Sheet — Column Guide
 
 Plain-language explanation of every column in every tab.
 What it means, where it comes from, how it is calculated.
 
-Sheet: https://docs.google.com/spreadsheets/d/1p7vPIIR8imPAZUZekbIuDW7Qfg0Jfc9xa6eEeaSv5Us
+Sheet: https://docs.google.com/spreadsheets/d/1xAF6wWvhe0E4kBQV0i_DqTu1hvqdy8HL07YZyTtruCw
 
 ---
 

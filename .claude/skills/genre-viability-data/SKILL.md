@@ -1,4 +1,4 @@
----
+﻿---
 name: genre-viability-data
 description: >
   Usage: (no arg) view ratings | [update] refresh from live data | [add][genre] add new genre |
@@ -36,7 +36,7 @@ Still display current ratings below the warning.
 ## Config
 
 - **`CREDENTIALS_FILE`** — `C:\Organized Files\My Game Asset\Game-Research\genre-viability-data-417b9f28c38e.json`
-- **`SHEET_URL`** — `https://docs.google.com/spreadsheets/d/1p7vPIIR8imPAZUZekbIuDW7Qfg0Jfc9xa6eEeaSv5Us/edit?usp=sharing`
+- **`SHEET_URL`** — `https://docs.google.com/spreadsheets/d/1xAF6wWvhe0E4kBQV0i_DqTu1hvqdy8HL07YZyTtruCw/edit?usp=sharing`
 
 ---
 
