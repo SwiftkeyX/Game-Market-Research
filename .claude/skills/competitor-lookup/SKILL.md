@@ -403,6 +403,40 @@ print(f"Written {len(sheet_rows)} games to tab '{tab_name}'.")
 
 ---
 
+### Step 6.5 — Git: export CSV + commit + push
+
+Export the tab just written to a diffable CSV, then commit and push to GitHub.
+
+```python
+# --- Git: export CSV + commit + push ---
+import csv, subprocess
+from pathlib import Path
+
+BASE = Path(r"C:\Organized Files\My Game Asset\Game-Research")
+
+data_dir = BASE / "data" / "competitors"
+data_dir.mkdir(parents=True, exist_ok=True)
+csv_path = data_dir / f"{genre_slug}.csv"
+with open(csv_path, "w", newline="", encoding="utf-8") as f:
+    csv.writer(f).writerows(ws.get_all_values())
+print(f"Exported: {csv_path.relative_to(BASE)}")
+
+def _git(*args):
+    r = subprocess.run(["git"] + list(args), cwd=str(BASE), capture_output=True, text=True)
+    if r.stdout: print(r.stdout.strip())
+    if r.stderr: print(r.stderr.strip())
+
+today_str = date.today().isoformat()
+_git("add", f"data/competitors/{genre_slug}.csv", "research-log.md")
+_git("commit", "-m", f"research: {genre_display} competitor data - {today_str}")
+_git("push", "origin", "main")
+print("Git: committed and pushed.")
+```
+
+`ws`, `genre_slug`, `genre_display`, and `date` are all already in scope from Step 5.
+
+---
+
 ### Step 6 — Text summary output
 
 Display a grouped summary in chat after writing:

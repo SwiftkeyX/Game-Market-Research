@@ -207,6 +207,33 @@ def apply_formatting(sh, ws):
    ```
 6. Apply changes using `ws.update_cell(row, col, value)` for each changed cell — never clear the whole sheet.
 7. Update **Last updated** and **Next refresh due** (+1 month) in this SKILL.md file.
+8. **Git: export CSV + commit + push**
+
+```python
+# --- Git: export CSV + commit + push ---
+import csv, subprocess
+from pathlib import Path
+from datetime import date
+
+BASE = Path(r"C:\Organized Files\My Game Asset\Game-Research")
+
+ratings_ws = sh.worksheet("Genre Viability Ratings (GO / CAUTION / AVOID)")
+csv_path = BASE / "data" / "genre-viability.csv"
+csv_path.parent.mkdir(parents=True, exist_ok=True)
+with open(csv_path, "w", newline="", encoding="utf-8") as f:
+    csv.writer(f).writerows(ratings_ws.get_all_values())
+print(f"Exported: data/genre-viability.csv")
+
+def _git(*args):
+    r = subprocess.run(["git"] + list(args), cwd=str(BASE), capture_output=True, text=True)
+    if r.stdout: print(r.stdout.strip())
+    if r.stderr: print(r.stderr.strip())
+
+_git("add", "data/genre-viability.csv")
+_git("commit", "-m", f"update: genre viability ratings - {date.today().isoformat()}")
+_git("push", "origin", "main")
+print("Git: committed and pushed.")
+```
 
 **Rating change signals:**
 - 🟡→🟢 Upgrade: hit rate rising 2+ quarters, new breakout hits, low saturation
@@ -236,7 +263,34 @@ def apply_formatting(sh, ws):
    ```python
    ws.append_row([verdict, genre, solo, team4, hit_rate, trend, notes])
    ```
-6. Confirm to user: verdict assigned, why, sources used.
+6. **Git: export CSV + commit + push**
+
+```python
+# --- Git: export CSV + commit + push ---
+import csv, subprocess
+from pathlib import Path
+from datetime import date
+
+BASE = Path(r"C:\Organized Files\My Game Asset\Game-Research")
+
+ratings_ws = sh.worksheet("Genre Viability Ratings (GO / CAUTION / AVOID)")
+csv_path = BASE / "data" / "genre-viability.csv"
+csv_path.parent.mkdir(parents=True, exist_ok=True)
+with open(csv_path, "w", newline="", encoding="utf-8") as f:
+    csv.writer(f).writerows(ratings_ws.get_all_values())
+
+def _git(*args):
+    r = subprocess.run(["git"] + list(args), cwd=str(BASE), capture_output=True, text=True)
+    if r.stdout: print(r.stdout.strip())
+    if r.stderr: print(r.stderr.strip())
+
+_git("add", "data/genre-viability.csv")
+_git("commit", "-m", f"add: {genre} to viability ratings - {date.today().isoformat()}")
+_git("push", "origin", "main")
+print("Git: committed and pushed.")
+```
+
+7. Confirm to user: verdict assigned, why, sources used.
 
 ---
 
@@ -253,7 +307,34 @@ def apply_formatting(sh, ws):
    ```python
    ws.delete_rows(cell.row)
    ```
-4. Confirm deletion to user.
+4. **Git: export CSV + commit + push**
+
+```python
+# --- Git: export CSV + commit + push ---
+import csv, subprocess
+from pathlib import Path
+from datetime import date
+
+BASE = Path(r"C:\Organized Files\My Game Asset\Game-Research")
+
+ratings_ws = sh.worksheet("Genre Viability Ratings (GO / CAUTION / AVOID)")
+csv_path = BASE / "data" / "genre-viability.csv"
+csv_path.parent.mkdir(parents=True, exist_ok=True)
+with open(csv_path, "w", newline="", encoding="utf-8") as f:
+    csv.writer(f).writerows(ratings_ws.get_all_values())
+
+def _git(*args):
+    r = subprocess.run(["git"] + list(args), cwd=str(BASE), capture_output=True, text=True)
+    if r.stdout: print(r.stdout.strip())
+    if r.stderr: print(r.stderr.strip())
+
+_git("add", "data/genre-viability.csv")
+_git("commit", "-m", f"remove: {genre_name} from viability ratings - {date.today().isoformat()}")
+_git("push", "origin", "main")
+print("Git: committed and pushed.")
+```
+
+5. Confirm deletion to user.
 
 ---
 
