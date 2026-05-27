@@ -8,3 +8,4 @@
 | 2026-05-26 | 2D Platformer | 7 | 7 | 4 | `snapshots/2d-platformer/2026-05-26.xlsx` |
 | 2026-05-26 | Roguelike | 7 | 7 | 7 | snapshots/roguelike/2026-05-26.xlsx |
 | 2026-05-27 | Roguelike Deckbuilder | 7 | 7 | 7 | `snapshots/roguelike-deckbuilder/2026-05-27.xlsx` |
+| 2026-05-27 | Survival Crafting | 7 | 7 | 7 | `snapshots/survival-crafting/2026-05-27.xlsx` |
