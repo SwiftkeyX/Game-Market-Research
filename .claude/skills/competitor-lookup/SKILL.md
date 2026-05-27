@@ -125,7 +125,7 @@ Install openpyxl if needed:
 C:\Users\ad\AppData\Local\Programs\Python\Python312\python.exe -m pip install openpyxl
 ```
 
-Save to: `C:\Organized Files\My Game Asset\Game Market\Game-Research\gameplay-review-[genre-slug].xlsx`
+Save to: `C:\Organized Files\My Game Asset\Game Market\Game-Research\exports\gameplay-review-[genre-slug].xlsx`
 
 ```python
 import openpyxl
@@ -222,7 +222,7 @@ for g in game_rows:
 ws.freeze_panes = "A2"
 
 genre_slug = genre.lower().replace(" ", "-").replace("/", "-")
-output_path = rf"C:\Organized Files\My Game Asset\Game Market\Game-Research\gameplay-review-{genre_slug}.xlsx"
+output_path = rf"C:\Organized Files\My Game Asset\Game Market\Game-Research\exports\gameplay-review-{genre_slug}.xlsx"
 wb.save(output_path)
 print(f"Saved: {output_path}")
 

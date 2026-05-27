@@ -2,7 +2,7 @@
 genre-viability-data-*.json
 
 # Binary exports (regenerable, not diffable)
-gameplay-review-*.xlsx
+exports/gameplay-review-*.xlsx
 snapshots/
 
 # Python
