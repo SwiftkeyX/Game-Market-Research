@@ -125,7 +125,7 @@ Install openpyxl if needed:
 C:\Users\ad\AppData\Local\Programs\Python\Python312\python.exe -m pip install openpyxl
 ```
 
-Save to: `C:\Organized Files\My Game Asset\Game-Research\gameplay-review-[genre-slug].xlsx`
+Save to: `C:\Organized Files\My Game Asset\Game Market\Game-Research\gameplay-review-[genre-slug].xlsx`
 
 ```python
 import openpyxl
@@ -222,7 +222,7 @@ for g in game_rows:
 ws.freeze_panes = "A2"
 
 genre_slug = genre.lower().replace(" ", "-").replace("/", "-")
-output_path = rf"C:\Organized Files\My Game Asset\Game-Research\gameplay-review-{genre_slug}.xlsx"
+output_path = rf"C:\Organized Files\My Game Asset\Game Market\Game-Research\gameplay-review-{genre_slug}.xlsx"
 wb.save(output_path)
 print(f"Saved: {output_path}")
 
@@ -230,14 +230,14 @@ print(f"Saved: {output_path}")
 import shutil
 from pathlib import Path
 
-snapshot_dir = Path(rf"C:\Organized Files\My Game Asset\Game-Research\snapshots") / genre_slug
+snapshot_dir = Path(rf"C:\Organized Files\My Game Asset\Game Market\Game-Research\snapshots") / genre_slug
 snapshot_dir.mkdir(parents=True, exist_ok=True)
 snapshot_path = snapshot_dir / f"{date.today().isoformat()}.xlsx"
 shutil.copy2(output_path, snapshot_path)
 print(f"Snapshot: {snapshot_path}")
 
 # --- Update research-log.md ---
-log_path = Path(r"C:\Organized Files\My Game Asset\Game-Research\research-log.md")
+log_path = Path(r"C:\Organized Files\My Game Asset\Game Market\Game-Research\research-log.md")
 today_str = date.today().isoformat()
 genre_display = " ".join(w.capitalize() for w in genre.split())
 high_count = sum(1 for g in game_rows if g["tier"] == "HIGH")
@@ -270,7 +270,7 @@ from google.oauth2.service_account import Credentials
 from datetime import date
 import time
 
-CREDENTIALS_FILE = r"C:\Organized Files\My Game Asset\Game-Research\genre-viability-data-417b9f28c38e.json"
+CREDENTIALS_FILE = r"C:\Organized Files\My Game Asset\Game Market\Game-Research\genre-viability-data-417b9f28c38e.json"
 SHEET_URL = "https://docs.google.com/spreadsheets/d/1xAF6wWvhe0E4kBQV0i_DqTu1hvqdy8HL07YZyTtruCw/edit?usp=sharing"
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
@@ -430,7 +430,7 @@ Export the tab just written to a diffable CSV, then commit and push to GitHub.
 import csv, subprocess
 from pathlib import Path
 
-BASE = Path(r"C:\Organized Files\My Game Asset\Game-Research")
+BASE = Path(r"C:\Organized Files\My Game Asset\Game Market\Game-Research")
 
 data_dir = BASE / "data" / "competitors"
 data_dir.mkdir(parents=True, exist_ok=True)

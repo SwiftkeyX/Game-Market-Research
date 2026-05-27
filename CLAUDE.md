@@ -29,7 +29,7 @@ Use this to orient yourself across the whole indie market.
 Researches 21 real games in that genre (7 HIGH / 7 MID / 7 FAILURE) and collects:
 Genre | Game | Year | Revenue | Reviews | Team Size | Art Style | Game Feel | Features | Scope | Content | Replayability
 
-Saves everything to a genre-specific Google Sheets tab and an Excel file.
+Saves research to a local Excel file and CSV. Google Sheets write is handled separately by Claude Code (see below).
 
 ## Sub-skills
 
@@ -43,10 +43,28 @@ Saves everything to a genre-specific Google Sheets tab and an Excel file.
 
 ## Google Sheets
 
-All data writes to:
+All data targets:
 https://docs.google.com/spreadsheets/d/1xAF6wWvhe0E4kBQV0i_DqTu1hvqdy8HL07YZyTtruCw/edit
 
 Credentials: `genre-viability-data-417b9f28c38e.json` (in this directory)
+
+⚠️ Cowork CANNOT write to Google Sheets directly — the sandbox blocks Google OAuth.
+Reading the sheet is fine via the Google Drive MCP connector.
+Writing is delegated to Claude Code via the handoff folder below.
+
+## Handoff to Claude Code
+This is instruction to Claude Cowork only. If you are Claude code, you can skip this.
+
+After every `/indie-game-market-research [genre]` run, Cowork must place two files into:
+`Claude Cowork instruction to Claude code/scripts/sheets/`
+
+1. The generated Google Sheets upload script (e.g. `upload_[genre-slug]_to_sheets.py`)
+   — mark it ⚠️ ONE-TIME USE — DELETE AFTER RUNNING at the top of the file
+2. A reminder that `git_push.bat` (already in the folder) should be run after the sheet upload
+
+Claude Code then runs those scripts on the user's Windows machine where full network
+access is available. See `Claude Cowork instruction to Claude code/INSTRUCTIONS.txt`
+for the full workflow.
 
 ## Reference Files
 

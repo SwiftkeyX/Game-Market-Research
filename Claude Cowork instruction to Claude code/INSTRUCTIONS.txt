@@ -1,0 +1,113 @@
+INSTRUCTIONS FOR CLAUDE CODE
+=============================
+
+WHY THESE SCRIPTS EXIST
+------------------------
+Claude Cowork runs scheduled research tasks (genre deep dives, viability checks, etc.)
+but cannot write to Google Sheets directly — the sandbox it runs in blocks outbound
+Google OAuth calls. These scripts exist so Claude Code can finish the job on the
+user's Windows machine, where full network access is available.
+
+Cowork handles:  research, web search, Excel file creation, CSV export
+Claude Code handles:  Google Sheets write, git commit + push
+
+
+PYTHON INTERPRETER
+------------------
+Always use:
+  C:\Users\ad\AppData\Local\Programs\Python\Python312\python.exe
+
+Install dependencies once if needed:
+  C:\Users\ad\AppData\Local\Programs\Python\Python312\python.exe -m pip install gspread google-auth openpyxl
+
+
+CREDENTIALS
+-----------
+Service account key:
+  C:\Organized Files\My Game Asset\Game Market\Game-Research\genre-viability-data-417b9f28c38e.json
+
+Google Sheet URL:
+  https://docs.google.com/spreadsheets/d/1xAF6wWvhe0E4kBQV0i_DqTu1hvqdy8HL07YZyTtruCw/edit
+
+
+SCRIPTS REFERENCE
+-----------------
+
+scripts/sheets/       — Google Sheets upload scripts
+  ⚠️ These are ONE-TIME USE. Delete each file after running it.
+  Each script writes one genre's competitor data to a dedicated tab in Google Sheets.
+  Cowork generates a new one of these after every scheduled research run.
+
+  How to run:
+    C:\Users\ad\AppData\Local\Programs\Python\Python312\python.exe scripts\sheets\<filename>.py
+
+  Current files:
+    upload_roguelike_deckbuilder_to_sheets.py  → writes tab: 🏆 roguelike-deckbuilder
+    sheets_2d_platformer.py                    → writes tab: 🏆 2D Platformer
+    sheets_metroidvania.py                     → writes tab: 🏆 Metroidvania
+    write_roguelike_sheets.py                  → writes tab: 🏆 Roguelike
+    add_roguelike.py                           → writes tab: 🏆 Roguelike (alt version)
+
+
+scripts/excel/        — Excel file builders
+  These build .xlsx competitor research files locally.
+  Cowork usually runs these automatically inside the sandbox.
+  Only run manually if the scheduled task failed mid-way.
+
+  How to run:
+    C:\Users\ad\AppData\Local\Programs\Python\Python312\python.exe scripts\excel\<filename>.py
+
+  Files:
+    build_roguelike_research.py   → gameplay-review-roguelike-deckbuilder.xlsx
+    build_2d_platformer.py        → gameplay-review-2d-platformer.xlsx
+    build_metroidvania.py         → gameplay-review-metroidvania.xlsx
+
+
+scripts/utils/        — Reusable tools (safe to run any time)
+
+  read_viability_row.py
+    Reads the Genre Viability Ratings sheet and prints a genre's verdict,
+    hit rate, trend, revenue targets, and notes to the terminal.
+    Edit SEARCH_GENRE inside the file to look up any genre.
+    Run: python scripts\utils\read_viability_row.py
+
+  clean_tabs.py
+    Lists all tabs in the Google Sheet and lets you choose which ones to delete.
+    Useful for cleaning up old archive tabs.
+    Run: python scripts\utils\clean_tabs.py
+
+  migrate_sheet.py
+    One-off migration script. Only run if explicitly asked.
+    Run: python scripts\utils\migrate_sheet.py
+
+  refine_broad_genres.py
+    Updates genre viability ratings in bulk.
+    Run: python scripts\utils\refine_broad_genres.py
+
+
+git_push.bat          — Commit + push research data to GitHub
+  Stages the latest CSV and research-log.md, commits, and pushes to main.
+  Double-click to run, or from terminal:
+    git_push.bat
+
+  If prompted for credentials, use your GitHub username +
+  a Personal Access Token (not your password).
+  Create one at: https://github.com/settings/tokens  (scope: repo)
+
+  Repo: https://github.com/SwiftkeyX/Game-Market-Research
+
+
+TYPICAL WORKFLOW AFTER A COWORK SCHEDULED RUN
+----------------------------------------------
+1. Cowork finishes → Excel file + CSV saved to Game-Research folder automatically
+2. Open terminal in this folder (or double-click git_push.bat)
+3. Run the matching sheets/ script to push data to Google Sheets
+4. Delete that sheets/ script (it's one-time use)
+5. Run git_push.bat to commit + push the CSV and research-log.md
+
+
+ADDING NEW SCRIPTS
+------------------
+When Cowork generates a new sheets upload script after a research run,
+save it into scripts/sheets/ and mark it ⚠️ ONE-TIME USE at the top.
+When Cowork generates a new Excel builder, save it into scripts/excel/.
