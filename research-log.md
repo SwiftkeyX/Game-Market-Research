@@ -9,3 +9,4 @@
 | 2026-05-26 | Roguelike | 7 | 7 | 7 | snapshots/roguelike/2026-05-26.xlsx |
 | 2026-05-27 | Roguelike Deckbuilder | 7 | 7 | 7 | `snapshots/roguelike-deckbuilder/2026-05-27.xlsx` |
 | 2026-05-27 | Survival Crafting | 7 | 7 | 7 | `snapshots/survival-crafting/2026-05-27.xlsx` |
+| 2026-05-28 | Narrative Rpg | 7 | 7 | 7 | snapshots/narrative-rpg/2026-05-28.xlsx |
