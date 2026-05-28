@@ -261,8 +261,9 @@ print(f"research-log.md updated.")
 
 ### Step 5 — Write to Google Sheets
 
-Write all 21 games to a **genre-specific tab** in the Google Sheet (e.g. `🏆 roguelike-deckbuilder`).
+Write all 21 games to a **genre-specific tab** in the Google Sheet (e.g. `🏆 Roguelike Deckbuilder`).
 Using a dedicated tab per genre keeps each research session clean and avoids schema conflicts.
+Each run **replaces** the previous tab entirely — no archive tabs are kept. Historical comparison is done via `git diff` on the exported CSV.
 
 ```python
 import gspread
@@ -292,30 +293,49 @@ sh     = client.open_by_url(SHEET_URL)
 
 today = date.today().isoformat()
 genre_slug = genre.lower().replace(" ", "-").replace("/", "-")
+# genre_display must use title-cased words, never a slug (e.g. "Roguelike Deckbuilder" not "roguelike-deckbuilder")
 genre_display = " ".join(w.capitalize() for w in genre.split())
 tab_name = f"🏆 {genre_display}"
 
-MAX_ARCHIVES = 3
-
-# Archive existing tab before overwriting (avoids appending duplicates)
+# No archive tabs — historical comparison is done via git diff on the exported CSV.
+# Delete the existing active tab for this genre (new-format: 🏆 prefix)
 try:
     old_ws = sh.worksheet(tab_name)
-    old_vals = old_ws.get_all_values()
-    if len(old_vals) > 1:  # has data rows
-        archive_name = f"🗂 {genre_display} ({today})"
-        old_ws.update_title(archive_name)
-    else:
-        sh.del_worksheet(old_ws)
+    sh.del_worksheet(old_ws)
 except gspread.WorksheetNotFound:
     pass
 
-# Delete oldest archives beyond the rolling limit
-archive_prefix = f"🗂 {genre_display}"
-all_tabs = sh.worksheets()
-archives = [ws for ws in all_tabs if ws.title.startswith(archive_prefix)]
-archives.sort(key=lambda ws: ws.title)  # YYYY-MM-DD suffix sorts oldest first
-while len(archives) > MAX_ARCHIVES:
-    sh.del_worksheet(archives.pop(0))
+# Delete 🏆-prefixed tab using old slug name e.g. "🏆 roguelike-deckbuilder"
+slug_tab_name = f"🏆 {genre_slug}"
+if slug_tab_name != tab_name:
+    try:
+        sh.del_worksheet(sh.worksheet(slug_tab_name))
+    except gspread.WorksheetNotFound:
+        pass
+
+# Delete 🏆-prefixed tab with no space after emoji e.g. "🏆Roguelike" (old upload script convention)
+nospace_tab_name = f"🏆{genre_display}"
+if nospace_tab_name != tab_name:
+    try:
+        sh.del_worksheet(sh.worksheet(nospace_tab_name))
+    except gspread.WorksheetNotFound:
+        pass
+
+# Delete old-format tabs for this genre (no emoji prefix, dated or plain, from older runs)
+import re
+old_format_pattern = re.compile(
+    r"^" + re.escape(genre_display) + r"(\s+\(\d{4}-\d{2}-\d{2}\))?$",
+    re.IGNORECASE
+)
+for t in sh.worksheets():
+    if old_format_pattern.match(t.title):
+        sh.del_worksheet(t)
+
+# Delete broken-emoji orphan tabs for this genre (case-insensitive, e.g. "?? Narrative RPG")
+genre_lower = genre_display.lower()
+for t in sh.worksheets():
+    if genre_lower in t.title.lower() and not t.title.startswith("🏆"):
+        sh.del_worksheet(t)
 
 ws = sh.add_worksheet(title=tab_name, rows=500, cols=len(HEADERS) + 2)
 ws.append_row(HEADERS)
@@ -479,5 +499,5 @@ Display a grouped summary in chat after writing:
 **Solo dev benchmark**: [Game] — [revenue], [reviews] reviews
 **Excel file**: gameplay-review-[genre].xlsx
 **Snapshot**: snapshots/[genre-slug]/YYYY-MM-DD.xlsx
-**Sheet tab**: 🏆 [Genre Name] (title case)  _(previous run archived as 🗂 [Genre Name] (YYYY-MM-DD); only 3 most-recent archives kept per genre)_
+**Sheet tab**: 🏆 [Genre Name] (title case)  _(previous tab replaced; use `git diff HEAD~1 data/competitors/[genre-slug].csv` to compare runs)_
 ```
