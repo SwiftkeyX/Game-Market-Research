@@ -249,17 +249,17 @@ for g in game_rows:
 ws.freeze_panes = 'A2'
 
 today = date.today()
-output_path = r'C:\Organized Files\My Game Asset\Game Market\Game-Research\exports\gameplay-review-3d-metroidvania.xlsx'
+output_path = r'C:\Organized Files\Working\Agent\Game-Market-Research\exports\gameplay-review-3d-metroidvania.xlsx'
 wb.save(output_path)
 print(f'Saved: {output_path}')
 
-snapshot_dir = Path(r'C:\Organized Files\My Game Asset\Game Market\Game-Research\snapshots\3d-metroidvania')
+snapshot_dir = Path(r'C:\Organized Files\Working\Agent\Game-Market-Research\snapshots\3d-metroidvania')
 snapshot_dir.mkdir(parents=True, exist_ok=True)
 snapshot_path = snapshot_dir / f'{today.isoformat()}.xlsx'
 shutil.copy2(output_path, snapshot_path)
 print(f'Snapshot: {snapshot_path}')
 
-log_path = Path(r'C:\Organized Files\My Game Asset\Game Market\Game-Research\research-log.md')
+log_path = Path(r'C:\Organized Files\Working\Agent\Game-Market-Research\research-log.md')
 today_str = today.isoformat()
 high_count = sum(1 for g in game_rows if g['tier'] == 'HIGH')
 mid_count  = sum(1 for g in game_rows if g['tier'] == 'MID')

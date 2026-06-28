@@ -17,7 +17,7 @@ Finishes what Claude Cowork started: uploads new competitor data to Google Sheet
 
 Scan for any `.py` files in:
 ```
-C:\Organized Files\My Game Asset\Game Market\Game-Research\Claude Cowork instruction to Claude code\scripts\sheets\
+C:\Organized Files\Working\Agent\Game-Market-Research\Claude Cowork instruction to Claude code\scripts\sheets\
 ```
 
 List what you find. If the directory is empty, tell the user there are no pending uploads and stop.
@@ -31,7 +31,7 @@ C:\Users\ad\AppData\Local\Programs\Python\Python312\python.exe "Claude Cowork in
 
 Run from the project root:
 ```
-C:\Organized Files\My Game Asset\Game Market\Game-Research
+C:\Organized Files\Working\Agent\Game-Market-Research
 ```
 
 Report success or failure for each script. If a script fails, show the error and ask the user whether to continue with the remaining scripts.
@@ -40,14 +40,14 @@ Report success or failure for each script. If a script fails, show the error and
 
 These are one-time-use scripts. After each one runs successfully, delete it:
 ```
-Remove-Item "C:\Organized Files\My Game Asset\Game Market\Game-Research\Claude Cowork instruction to Claude code\scripts\sheets\<filename>.py"
+Remove-Item "C:\Organized Files\Working\Agent\Game-Market-Research\Claude Cowork instruction to Claude code\scripts\sheets\<filename>.py"
 ```
 
 ### Step 4 — Run git_push.bat
 
 After all sheets scripts have run, commit and push the new research data to GitHub:
 ```
-"C:\Organized Files\My Game Asset\Game Market\Game-Research\git_push.bat"
+"C:\Organized Files\Working\Agent\Game-Market-Research\git_push.bat"
 ```
 
 Or from the project root terminal:
@@ -75,7 +75,7 @@ C:\Users\ad\AppData\Local\Programs\Python\Python312\python.exe -m pip install gs
 
 Service account key (already in the project directory):
 ```
-C:\Organized Files\My Game Asset\Game Market\Game-Research\genre-viability-data-417b9f28c38e.json
+C:\Organized Files\Working\Agent\Game-Market-Research\genre-viability-data-417b9f28c38e.json
 ```
 
 Google Sheet:

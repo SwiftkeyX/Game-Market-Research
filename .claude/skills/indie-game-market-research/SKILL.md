@@ -60,7 +60,7 @@ run the Python read inline:
 import gspread
 from google.oauth2.service_account import Credentials
 
-CREDENTIALS_FILE = r"C:\Organized Files\My Game Asset\Game-Research\genre-viability-data-417b9f28c38e.json"
+CREDENTIALS_FILE = r"C:\Organized Files\Working\Agent\Game-Market-Research\genre-viability-data-417b9f28c38e.json"
 SHEET_URL = "https://docs.google.com/spreadsheets/d/1xAF6wWvhe0E4kBQV0i_DqTu1hvqdy8HL07YZyTtruCw/edit?usp=sharing"
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
@@ -248,7 +248,7 @@ Append the new row using Python. Column order must match the existing sheet exac
 import gspread
 from google.oauth2.service_account import Credentials
 
-CREDENTIALS_FILE = r"C:\Organized Files\My Game Asset\Game-Research\genre-viability-data-417b9f28c38e.json"
+CREDENTIALS_FILE = r"C:\Organized Files\Working\Agent\Game-Market-Research\genre-viability-data-417b9f28c38e.json"
 SHEET_URL = "https://docs.google.com/spreadsheets/d/1xAF6wWvhe0E4kBQV0i_DqTu1hvqdy8HL07YZyTtruCw/edit?usp=sharing"
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
@@ -269,7 +269,7 @@ After the sheet write succeeds, export the full sheet to CSV:
 import csv
 from pathlib import Path
 
-csv_path = Path(r"C:\Organized Files\My Game Asset\Game-Research\data\genre-viability.csv")
+csv_path = Path(r"C:\Organized Files\Working\Agent\Game-Market-Research\data\genre-viability.csv")
 with open(csv_path, "w", newline="", encoding="utf-8") as f:
     csv.writer(f).writerows(ws.get_all_values())
 ```

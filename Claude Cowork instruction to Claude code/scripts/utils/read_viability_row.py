@@ -15,7 +15,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 
 # ── Config ─────────────────────────────────────────────────────────────────────
-CREDENTIALS_FILE = r"C:\Organized Files\My Game Asset\Game Market\Game-Research\genre-viability-data-417b9f28c38e.json"
+CREDENTIALS_FILE = r"C:\Organized Files\Working\Agent\Game-Market-Research\genre-viability-data-417b9f28c38e.json"
 SHEET_URL        = "https://docs.google.com/spreadsheets/d/1xAF6wWvhe0E4kBQV0i_DqTu1hvqdy8HL07YZyTtruCw/edit"
 SCOPES           = ["https://www.googleapis.com/auth/spreadsheets"]
 WORKSHEET_NAME   = "Genre Viability Ratings (GO / CAUTION / AVOID)"

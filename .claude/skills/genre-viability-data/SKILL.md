@@ -45,7 +45,7 @@ Still display current ratings below the warning.
 
 ## Config
 
-- **`CREDENTIALS_FILE`** — `C:\Organized Files\My Game Asset\Game-Research\genre-viability-data-417b9f28c38e.json`
+- **`CREDENTIALS_FILE`** — `C:\Organized Files\Working\Agent\Game-Market-Research\genre-viability-data-417b9f28c38e.json`
 - **`SHEET_URL`** — `https://docs.google.com/spreadsheets/d/1xAF6wWvhe0E4kBQV0i_DqTu1hvqdy8HL07YZyTtruCw/edit?usp=sharing`
 
 ---
@@ -225,7 +225,7 @@ import csv, subprocess
 from pathlib import Path
 from datetime import date
 
-BASE = Path(r"C:\Organized Files\My Game Asset\Game-Research")
+BASE = Path(r"C:\Organized Files\Working\Agent\Game-Market-Research")
 
 ratings_ws = sh.worksheet("Genre Viability Ratings (GO / CAUTION / AVOID)")
 csv_path = BASE / "data" / "genre-viability.csv"
@@ -281,7 +281,7 @@ import csv, subprocess
 from pathlib import Path
 from datetime import date
 
-BASE = Path(r"C:\Organized Files\My Game Asset\Game-Research")
+BASE = Path(r"C:\Organized Files\Working\Agent\Game-Market-Research")
 
 ratings_ws = sh.worksheet("Genre Viability Ratings (GO / CAUTION / AVOID)")
 csv_path = BASE / "data" / "genre-viability.csv"
@@ -325,7 +325,7 @@ import csv, subprocess
 from pathlib import Path
 from datetime import date
 
-BASE = Path(r"C:\Organized Files\My Game Asset\Game-Research")
+BASE = Path(r"C:\Organized Files\Working\Agent\Game-Market-Research")
 
 ratings_ws = sh.worksheet("Genre Viability Ratings (GO / CAUTION / AVOID)")
 csv_path = BASE / "data" / "genre-viability.csv"
